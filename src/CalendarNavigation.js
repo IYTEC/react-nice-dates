@@ -1,7 +1,8 @@
-import React from 'react'
+import { addMonths, format, getYear, isSameMonth, startOfMonth, subMonths } from 'date-fns'
 import { func, instanceOf, object } from 'prop-types'
+
+import React from 'react'
 import classNames from 'classnames'
-import { addMonths, getYear, startOfMonth, subMonths, format, isSameMonth } from 'date-fns'
 
 export default function CalendarNavigation({ locale, month, minimumDate, maximumDate, onMonthChange }) {
   const handlePrevious = event => {
@@ -16,25 +17,26 @@ export default function CalendarNavigation({ locale, month, minimumDate, maximum
 
   return (
     <div className='nice-dates-navigation'>
-      <a
-        className={classNames('nice-dates-navigation_previous', {
-          '-disabled': isSameMonth(month, minimumDate)
-        })}
-        onClick={handlePrevious}
-        onTouchEnd={handlePrevious}
-      />
-
-      <span className='nice-dates-navigation_current'>
-        {format(month, getYear(month) === getYear(new Date()) ? 'LLLL' : 'LLLL yyyy', { locale })}
-      </span>
-
-      <a
-        className={classNames('nice-dates-navigation_next', {
-          '-disabled': isSameMonth(month, maximumDate)
-        })}
-        onClick={handleNext}
-        onTouchEnd={handleNext}
-      />
+      
+      <div>
+        <a
+          className={classNames('nice-dates-navigation_previous', {
+            '-disabled': isSameMonth(month, minimumDate)
+          })}
+          onClick={handlePrevious}
+          onTouchEnd={handlePrevious}
+        />
+        <span className='nice-dates-navigation_current'>
+          {format(month, getYear(month) === getYear(new Date()) ? 'LLLL' : 'LLLL yyyy', { locale })}
+        </span>
+        <a
+          className={classNames('nice-dates-navigation_next', {
+            '-disabled': isSameMonth(month, maximumDate)
+          })}
+          onClick={handleNext}
+          onTouchEnd={handleNext}
+        />
+      </div>
     </div>
   )
 }

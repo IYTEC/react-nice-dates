@@ -1,20 +1,20 @@
 {
-  "name": "react-nice-dates",
-  "version": "3.1.0",
+  "name": "nice-react-date",
+  "version": "0.1.0",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "unpkg": "build/index.umd.js",
-  "author": "Hernán Sartorio",
+  "author": "Ikechi Adolphus",
   "license": "MIT",
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hernansartorio/react-nice-dates.git"
+    "url": "git+https://github.com/IYTEC/react-nice-dates.git"
   },
   "bugs": {
     "url": "https://github.com/hernansartorio/react-nice-dates/issues"
   },
-  "homepage": "https://github.com/hernansartorio/react-nice-dates#readme",
+  "homepage": "https://github.com/IYTEC/react-nice-dates#readme",
   "files": [
     "build",
     "src/style.scss",
