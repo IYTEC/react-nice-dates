@@ -301,9 +301,7 @@ $nice-dates-cell-width: calc(100% / 7);
     z-index: 9;
 
     &:not(.-open) {
-      opacity: 0;
-      pointer-events: none;
-      transform: perspective(1000px) rotateX(-15deg);
+      display: none;
     }
   }
 }
