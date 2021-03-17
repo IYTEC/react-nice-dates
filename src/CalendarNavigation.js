@@ -17,8 +17,7 @@ export default function CalendarNavigation({ locale, month, minimumDate, maximum
 
   return (
     <div className='nice-dates-navigation'>
-      
-      <div>
+      <div className='nice-dates-navigation_wrapper'>
         <a
           className={classNames('nice-dates-navigation_previous', {
             '-disabled': isSameMonth(month, minimumDate)
