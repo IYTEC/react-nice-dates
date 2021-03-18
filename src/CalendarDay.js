@@ -1,6 +1,7 @@
+import { bool, func, instanceOf, number, object, objectOf, string } from 'prop-types'
+import { format, getDate, isToday } from 'date-fns'
+
 import React from 'react'
-import { bool, instanceOf, func, number, object, objectOf, string } from 'prop-types'
-import { getDate, format, isToday } from 'date-fns'
 import classNames from 'classnames'
 
 const defaultModifiersClassNames = {
@@ -52,7 +53,6 @@ export default function CalendarDay({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onTouchEnd={handleClick}
-      style={{ height }}
     >
       {dayOfMonth === 1 && (
         <span className='nice-dates-day_month'>{format(date, 'LLL', { locale })}</span>

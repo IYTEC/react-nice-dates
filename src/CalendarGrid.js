@@ -1,10 +1,11 @@
-import React from 'react'
-import { bool, instanceOf, func, number, object, objectOf, string } from 'prop-types'
+import { ORIGIN_BOTTOM, ORIGIN_TOP } from './constants'
+import { bool, func, instanceOf, number, object, objectOf, string } from 'prop-types'
 import { eachDayOfInterval, isSameMonth, lightFormat, startOfMonth } from 'date-fns'
+
+import CalendarDay from './CalendarDay'
+import React from 'react'
 import classNames from 'classnames'
 import useGrid from './useGrid'
-import { ORIGIN_BOTTOM, ORIGIN_TOP } from './constants'
-import CalendarDay from './CalendarDay'
 
 const computeModifiers = (modifiers, date) => {
   const computedModifiers = {}
@@ -53,7 +54,7 @@ export default function CalendarGrid({
   })
 
   return (
-    <div className='nice-dates-grid' style={{ height: cellHeight * 6 }}>
+    <div className='nice-dates-grid'>
       <div
         className={classNames('nice-dates-grid_container', {
           '-moving': offset,
